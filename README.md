@@ -27,3 +27,20 @@ What we propose is an online ordering system, which is a technique of ordering f
 
 ## Functionalities
 + Make ordering and delivering orders for food easier for food runner
+
+
+## Screen navigation / Widgets
+
+Widget:<br>
+<br>
+Home : MaterialApp UI layout as stateless widget<br>
+Title : Wrapped by AppBar property, aligned to the center<br>
+Card : Contained information obtained from user’s input, aligned to the center<br>
+Floating Action Button : User can add new order<br>
+
+
+## Sequence diagram
+
+
+## References
+
