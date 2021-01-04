@@ -30,17 +30,20 @@ What we propose is an online ordering system, which is a technique of ordering f
 
 
 ## Screen navigation / Widgets
+<img width="412" alt="screen" src="https://user-images.githubusercontent.com/45591484/103543068-dfd34700-4ed8-11eb-8594-b3a99a6ed574.png">
+
+<img width="278" alt="tree" src="https://user-images.githubusercontent.com/45591484/103543105-f11c5380-4ed8-11eb-98a6-2a23882b1d70.png">
 
 Widget:<br>
-<br>
-Home : MaterialApp UI layout as stateless widget<br>
-Title : Wrapped by AppBar property, aligned to the center<br>
-Card : Contained information obtained from user’s input, aligned to the center<br>
-Floating Action Button : User can add new order<br>
+Home: MaterialApp UI layout as stateless widget<br>
+Title: Wrapped by AppBar property, aligned to the center<br>
+Card: Contained information obtained from user’s input, aligned to the center<br>
+Floating Action Button: User can add new order<br>
 
 
 ## Sequence diagram
-
+![sequence](https://user-images.githubusercontent.com/45591484/103543262-304aa480-4ed9-11eb-9da0-d0415c1fc574.png)
 
 ## References
-
+https://ardalis.com/add-images-easily-to-github/<br>
+https://www.markdownguide.org/basic-syntax/<br>
