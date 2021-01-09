@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "897369656483",
+    "project_id": "gourmand-c4f0d",
+    "storage_bucket": "gourmand-c4f0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897369656483:android:233401fac14f5864ffc316",
+        "android_client_info": {
+          "package_name": "com.example.flutter_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897369656483-9utneo1032ebdcrebuig16agfubcq544.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAWE8K8EucmMwih6hPvqeMjxuRwp6FHO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897369656483-9utneo1032ebdcrebuig16agfubcq544.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
