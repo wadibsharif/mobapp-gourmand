@@ -47,7 +47,7 @@ class _SettingsFormState extends State<SettingsForm> {
                 key: _formKey,
                 child: Column(
                   children: <Widget>[
-                    Text('Update order', style: TextStyle(fontSize: 18.0)),
+                    Text('Custom order', style: TextStyle(fontSize: 18.0)),
                     SizedBox(height: 20.0),
                     TextFormField(
                       initialValue: userData.name,
@@ -102,8 +102,8 @@ class _SettingsFormState extends State<SettingsForm> {
                     SizedBox(height: 10.0),
                     RaisedButton(
                       color: Colors.pink[400],
-                      child:
-                          Text('Update', style: TextStyle(color: Colors.white)),
+                      child: Text('New Order',
+                          style: TextStyle(color: Colors.white)),
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {
                           await DatabaseService(userID: user.userID)
