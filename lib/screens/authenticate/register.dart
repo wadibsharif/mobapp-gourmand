@@ -75,6 +75,7 @@ class _RegisterState extends State<Register> {
                               SizedBox(height: 20.0),
                               //username
                               TextFormField(
+                                  style: TextStyle(color: Colors.white),
                                   decoration: InputDecoration(
                                       border: new OutlineInputBorder(
                                           borderSide: new BorderSide(
@@ -99,10 +100,11 @@ class _RegisterState extends State<Register> {
 
                               //password
                               TextFormField(
+                                style: TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
                                     border: new OutlineInputBorder(
-                                        borderSide:
-                                            new BorderSide(color: Colors.teal)),
+                                        borderSide: new BorderSide(
+                                            color: Colors.white)),
                                     fillColor: Colors.white,
                                     focusedBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(

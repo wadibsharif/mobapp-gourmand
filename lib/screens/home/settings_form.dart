@@ -59,8 +59,8 @@ class _SettingsFormState extends State<SettingsForm> {
                     value: (_currentRice ?? userData.rice).toDouble(),
                     activeColor: Colors.brown[_currentRice ?? userData.rice],
                     inactiveColor: Colors.brown[_currentRice ?? userData.rice],
-                    min: 100.0,
-                    max: 600.0,
+                    min: 0.0,
+                    max: 500.0,
                     divisions: 5,
                     onChanged: (val) =>
                         setState(() => _currentRice = val.round()),

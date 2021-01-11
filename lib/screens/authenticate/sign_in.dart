@@ -74,6 +74,7 @@ class _SignInState extends State<SignIn> {
                             SizedBox(height: 20.0),
                             //username
                             TextFormField(
+                                style: TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
                                     border: new OutlineInputBorder(
                                         borderSide: new BorderSide(
@@ -96,6 +97,7 @@ class _SignInState extends State<SignIn> {
                             SizedBox(height: 20.0),
                             //password
                             TextFormField(
+                              style: TextStyle(color: Colors.white),
                               decoration: InputDecoration(
                                   border: new OutlineInputBorder(
                                       borderSide:
