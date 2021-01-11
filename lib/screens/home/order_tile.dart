@@ -18,7 +18,7 @@ class OrderTile extends StatelessWidget {
           ), //image on left
           title: Text(order.name),
           subtitle: Text(
-              'Rice: ${order.rice}\nDish: ${order.dish}\nSides: ${order.sides}'),
+              'Rice: ${order.rice ~/ 100}\nDish: ${order.dish}\nSides: ${order.sides}'),
         ),
       ),
     );

@@ -45,7 +45,7 @@ class Home extends StatelessWidget {
             )
           ],
         ),
-        body: OrderList(),
+        body: Container(child: OrderList()),
       ),
     );
   }

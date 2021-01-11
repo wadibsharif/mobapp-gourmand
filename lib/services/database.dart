@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_project/models/order.dart';
+import 'package:flutter_project/models/user.dart';
 
 class DatabaseService {
   final String userID;
@@ -31,8 +32,24 @@ class DatabaseService {
     }).toList();
   }
 
+  //userData from snapshot
+  UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+      userID: userID,
+      name: snapshot.data['name'],
+      rice: snapshot.data['rice'],
+      dish: snapshot.data['dish'],
+      sides: snapshot.data['sides'],
+    );
+  }
+
   //get orders stream
   Stream<List<Order>> get orders {
     return orderDetails.snapshots().map(_orderListFromSnapshot);
+  }
+
+  //get user doc stream
+  Stream<UserData> get userData {
+    return orderDetails.document(userID).snapshots().map(_userDataFromSnapshot);
   }
 }
