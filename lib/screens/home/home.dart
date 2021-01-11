@@ -22,35 +22,34 @@ class Home extends StatelessWidget {
           });
     }
 
-    return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/bgc.jpg'), fit: BoxFit.cover)),
-      child: StreamProvider<List<Order>>.value(
-        value: DatabaseService().orders,
-        child: Scaffold(
-          backgroundColor: Colors.brown[50],
-          appBar: AppBar(
-            title: Text('Gourmand'),
-            backgroundColor: Colors.brown[400],
-            elevation: 0.0,
-            actions: <Widget>[
-              FlatButton.icon(
-                icon: Icon(Icons.person),
-                label: Text('Log Out'),
-                onPressed: () async {
-                  await _auth.signOut();
-                },
-              ),
-              FlatButton.icon(
-                icon: Icon(Icons.settings),
-                label: Text('Settings'),
-                onPressed: () => _showSettingsPanel(),
-              )
-            ],
-          ),
-          body: Container(child: OrderList()),
+    return StreamProvider<List<Order>>.value(
+      value: DatabaseService().orders,
+      child: Scaffold(
+        backgroundColor: Colors.brown[50],
+        appBar: AppBar(
+          title: Text('Gourmand'),
+          backgroundColor: Colors.brown[400],
+          elevation: 0.0,
+          actions: <Widget>[
+            FlatButton.icon(
+              icon: Icon(Icons.person),
+              label: Text('Log Out'),
+              onPressed: () async {
+                await _auth.signOut();
+              },
+            ),
+            FlatButton.icon(
+              icon: Icon(Icons.settings),
+              label: Text('Settings'),
+              onPressed: () => _showSettingsPanel(),
+            )
+          ],
         ),
+        body: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/bgd.jpg'), fit: BoxFit.cover)),
+            child: OrderList()),
       ),
     );
   }
