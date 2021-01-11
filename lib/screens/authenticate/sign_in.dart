@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/services/auth.dart';
 import 'package:flutter_project/shared/constants.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggleView;
@@ -33,6 +34,11 @@ class _SignInState extends State<SignIn> {
             icon: Icon(Icons.person),
             label: Text('Register'),
             onPressed: () {
+              //Navigator.push(
+              //context,
+              //PageTransition(
+              //type: PageTransitionType.leftToRight,
+              //child: widget.toggleView()));
               widget.toggleView();
             },
           )
@@ -43,10 +49,9 @@ class _SignInState extends State<SignIn> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(5, 60, 5, 49),
+              padding: EdgeInsets.fromLTRB(5, 60, 5, 10),
               child: Container(
                   alignment: Alignment.center,
-                  //padding: EdgeInsets.fromLTRB(5, 25, 5, 0),
                   child: Text(
                     'Welcome to Gourmand',
                     style: TextStyle(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/services/auth.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:flutter_project/shared/constants.dart';
 
 class Register extends StatefulWidget {
   final Function toggleView;
@@ -31,60 +33,92 @@ class _RegisterState extends State<Register> {
             icon: Icon(Icons.person),
             label: Text('Sign In'),
             onPressed: () {
+              //Navigator.push(
+              //context,
+              //PageTransition(
+              //type: PageTransitionType.leftToRight,
+              //child: widget.toggleView()));
               widget.toggleView();
             },
           )
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: <Widget>[
-              SizedBox(height: 20.0),
-              //username
-              TextFormField(
-                  validator: (val) => val.isEmpty ? 'Enter an email' : null,
-                  onChanged: (val) {
-                    setState(() => email = val);
-                  }),
-              SizedBox(height: 20.0),
-              //password
-              TextFormField(
-                  obscureText: true,
-                  validator: (val) => val.length < 6
-                      ? 'Enter a password that is more than 6 characters'
-                      : null,
-                  onChanged: (val) {
-                    setState(() => password = val);
-                  }),
-              SizedBox(height: 20.0),
-              RaisedButton(
-                  color: Colors.pink[400],
-                  child: Text(
-                    'Register',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () async {
-                    if (_formKey.currentState.validate()) {
-                      dynamic result = await _auth.registerWithEmailAndPassword(
-                          email, password);
-                      if (result == null) {
-                        setState(() {
-                          error = 'Please supply a valid email';
-                        });
-                      }
-                    }
-                  }),
-              SizedBox(height: 12.0),
-              Text(
-                error,
-                style: TextStyle(color: Colors.red, fontSize: 14.0),
-              )
-            ],
+      body: SingleChildScrollView(
+        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
+            Widget>[
+          Padding(
+            padding: EdgeInsets.fromLTRB(5, 60, 5, 10),
+            child: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  'Delivery Made Easy',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 30),
+                )),
           ),
-        ),
+          Container(
+            //decoration: BoxDecoration(
+            // image: DecorationImage(
+            //    image: AssetImage(
+            //       'assets/gold-cutlery-set-black-background.jpg'),
+            //  fit: BoxFit.fitHeight)),
+            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: <Widget>[
+                  SizedBox(height: 20.0),
+                  //username
+                  TextFormField(
+                    decoration: textInputDecoration.copyWith(hintText: 'Email'),
+                    validator: (val) => val.isEmpty ? 'Enter an email' : null,
+                    onChanged: (val) {
+                      setState(() => email = val);
+                    },
+                  ),
+                  SizedBox(height: 20.0),
+                  //password
+                  TextFormField(
+                    decoration:
+                        textInputDecoration.copyWith(hintText: 'Password'),
+                    validator: (val) => val.length < 6
+                        ? 'Enter a password 6+ chars long'
+                        : null,
+                    obscureText: true,
+                    onChanged: (val) {
+                      setState(() => password = val);
+                    },
+                  ),
+                  SizedBox(height: 20.0),
+                  RaisedButton(
+                      color: Colors.pink[400],
+                      child: Text(
+                        'Register',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () async {
+                        if (_formKey.currentState.validate()) {
+                          dynamic result = await _auth
+                              .registerWithEmailAndPassword(email, password);
+                          if (result == null) {
+                            setState(() {
+                              error = 'Please supply a valid email';
+                            });
+                          }
+                        }
+                      }),
+                  SizedBox(height: 12.0),
+                  Text(
+                    error,
+                    style: TextStyle(color: Colors.red, fontSize: 14.0),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ]),
       ),
     );
   }
