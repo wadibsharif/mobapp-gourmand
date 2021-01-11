@@ -48,7 +48,7 @@ class _RegisterState extends State<Register> {
         Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/bg.jpg'), fit: BoxFit.cover)),
+                  image: AssetImage('assets/bga.jpg'), fit: BoxFit.cover)),
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
               Widget>[
             Padding(
@@ -73,7 +73,12 @@ class _RegisterState extends State<Register> {
                     //username
                     TextFormField(
                       decoration: InputDecoration(
+                          border: new OutlineInputBorder(
+                              borderSide: new BorderSide(color: Colors.white)),
                           fillColor: Colors.white,
+                          focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: Colors.white)),
                           labelText: 'Email',
                           labelStyle: TextStyle(color: Colors.white),
                           hintText: 'abc@gmail.com',
@@ -89,7 +94,12 @@ class _RegisterState extends State<Register> {
                     //password
                     TextFormField(
                       decoration: InputDecoration(
-                          focusColor: Colors.white,
+                          border: new OutlineInputBorder(
+                              borderSide: new BorderSide(color: Colors.teal)),
+                          fillColor: Colors.white,
+                          focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  const BorderSide(color: Colors.white)),
                           labelText: 'Password',
                           labelStyle: TextStyle(color: Colors.white),
                           hintText: '123456',
